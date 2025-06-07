@@ -1,0 +1,35 @@
+.countryImg{
+    max-height: 50px;
+    max-width: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.worldMap{
+    display: flex;
+    flex-shrink: 1;
+    flex-grow: 1;
+    max-width: 20rem;
+    max-height: 20rem;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-wrap: wrap; /* wrap items to next row */
+    gap: 1rem;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    flex-basis: 300px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background: #f9f9f9;
+}
