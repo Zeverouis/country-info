@@ -2,6 +2,7 @@ import './App.css';
 import axios from 'axios';
 import { useState } from 'react';
 import worldMap from './assets/world_map.png';
+import countryColours from "./helpers/countryColours.jsx";
 
 function App() {
     const [showCountries, setShowCountries] = useState([]);
@@ -10,7 +11,7 @@ function App() {
     async function getCountries() {
         try {
             const result = await axios.get(
-                'https://restcountries.com/v3.1/all?fields=name,flags,population'
+                'https://restcountries.com/v3.1/all?fields=name,flags,population,region'
             );
             const sortedCountries = result.data.sort((a, b) => a.population - b.population);
             console.log(result);
@@ -37,7 +38,8 @@ function App() {
                         {showCountries.map((country, index) => (
                             <li key={index}>
                                <img className= "countryImg" src={country.flags.svg} alt={`Flag of ${country.name.common}`}/>
-                                {country.name.common} has a population of {country.population.toLocaleString()} people
+                               <span className={countryColours(country.region)}> {country.name.common} </span>
+                                has a population of {country.population.toLocaleString()} people
                             </li>
                         ))}
                     </ul>

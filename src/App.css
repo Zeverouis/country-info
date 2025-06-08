@@ -33,3 +33,23 @@ li{
     border-radius: 6px;
     background: #f9f9f9;
 }
+
+.africa{
+    color: blue;
+}
+
+.americas{
+    color: green;
+}
+
+.asia{
+    color: red;
+}
+
+.europe{
+    color: #d1c71f;
+}
+
+.oceania{
+    color: purple;
+}
